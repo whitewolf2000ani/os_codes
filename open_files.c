@@ -7,11 +7,14 @@
 
 int main()
 {
-    int fd;
-    char buff[100];
+    char buff[50];
+    char buff2[50];
+    int fd,fd1;
 
-    fd = open("AOC_day2.1.txt", O_RDONLY);
-    printf("The file descriptor is:%d\n", fd);
-    int n = read(fd, buff, 50);
-    write(1, buff, n);
+    fd=open("AOC_day2.1.txt",O_RDONLY);
+    int n=read(fd,buff,7);
+    fd1=open("AOC_starting.txt",O_RDONLY|O_WRONLY|O_APPEND,0777);
+    write(fd1,buff,n);
+
+    return 0;
 }
