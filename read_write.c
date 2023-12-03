@@ -4,6 +4,6 @@
 int main(){
     char buff[20];
     int n=read(0,buff,20);
-    int m=write(1,buff,20);
+    write(1,buff,n);
     printf("%d %d",m,n);
 }
