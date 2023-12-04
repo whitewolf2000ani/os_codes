@@ -8,18 +8,11 @@
 
 int main(){
 
-    int fd;
+    int fd,n;
     char buff[100];
-    fd=open("AOC_starting.txt",O_RDWR,0642);
-    int n=read(fd,buff,10);
-    write(1,buff,10);
-    int pin=lseek(fd,5,SEEK_CUR);
-    write(fd,"hello",5);
-    printf("\n %d \n",pin);
-    lseek(fd,-5,SEEK_CUR);
-    read(fd,buff,10);
-    write(1,buff,10);
-
-
-    return 0;
+    fd=open("AOC_starting.txt",O_APPEND|O_RDWR,0777);
+    int pin=lseek(fd,10,SEEK_SET);  
+    printf("%d\n",pin);
+    write(fd,"neniloves",10);
+    
 }

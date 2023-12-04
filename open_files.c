@@ -15,6 +15,9 @@ int main()
     int n=read(fd,buff,7);
     fd1=open("AOC_starting.txt",O_RDONLY|O_WRONLY|O_APPEND,0777);
     write(fd1,buff,n);
+    write(fd1,"0",1);
+    int pin=lseek(fd1,0,SEEK_CUR);
+    printf("%d\n",pin);
 
     return 0;
 }
